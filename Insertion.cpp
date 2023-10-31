@@ -30,6 +30,23 @@ void InsertionSort2(int arr[],int n)
 	}
 }
 
+void InsertionSort3(int a[], int n)
+{
+	int j;
+	int index;
+	for (int i = 1; i < n; i++)
+	{
+		index = a[i];
+		j = i;
+		while (j > 0 && a[j - 1] > index)
+		{
+			a[j] = a[j - 1];
+			j = j - 1;
+		}
+		a[j] = index;
+	}
+}
+
 void InsertionSortBinarySearch(int arr[], int n)
 {
 	int inf, sup, median;
@@ -54,11 +71,11 @@ int main()
 {
 	int arr[1001];
 	int n; cin >> n;
-	for (int i = 1; i <= n; i++)
+	for (int i = 0; i < n; i++)
 		cin >> arr[i];
 	InsertionSort2(arr, n);
-	cout << "Insertion Sort: ";
-	for (int i = 1; i <= n; i++)
-		cout << arr[i] << " ";
+	// cout << "Insertion Sort: ";
+	// for (int i = 0; i < n; i++)
+	// 	cout << arr[i] << " ";
 	return 0;
 }
